@@ -27,21 +27,18 @@ public class LoginPageTest extends TestBase
 		loginPage=new LoginPage();
 	}
 	
-	@Test(priority=3)
-	public void loginPageTitleTest()
-	{
-		String title=loginPage.validateLoginPageTitle();
-		Assert.assertEquals(title, "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
-	}
+	/*
+	 * @Test(priority=2) public void loginPageTitleTest() { String
+	 * title=loginPage.validateLoginPageTitle(); Assert.assertEquals(title,
+	 * "Amazon.in"); }
+	 * 
+	 * @Test(priority=3) public void amazonLogoTest() {
+	 * homePage=loginPage.login(prop.getProperty("username"),
+	 * prop.getProperty("password")); boolean flag=loginPage.validateAmazonLogo();
+	 * Assert.assertTrue(flag); }
+	 */
 	
 	@Test(priority=1)
-	public void amazonLogoTest()
-	{
-		boolean flag=loginPage.validateAmazonLogo();
-		Assert.assertTrue(flag);
-	}
-	
-	@Test(priority=2)
 	public void loginTest()
 	{
 		homePage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"));

@@ -10,6 +10,9 @@ public class LoginPage extends com.amazon.qa.base.TestBase
 	
 	//need to define 2 things here i.e. objectRepository(PageFactory)
 	
+	@FindBy(xpath="//div[@id='nav-link-accountList']")
+	WebElement signIn;
+	
 	@FindBy(name="email")
 	WebElement email;
 	
@@ -22,7 +25,7 @@ public class LoginPage extends com.amazon.qa.base.TestBase
 	@FindBy(xpath = "//input[@type='submit']")
 	WebElement submit;
 	
-	@FindBy(xpath="//i[@class='a-icon a-icon-logo']")
+	@FindBy(xpath="//a[@aria-label='Amazon.in']")
 	WebElement amazonLogo;
 	
 	//now we have to initialize all the above object repositories.
@@ -46,6 +49,7 @@ public class LoginPage extends com.amazon.qa.base.TestBase
 	
 	public HomePage login(String us, String pwd)
 	{
+		signIn.click();
 		email.sendKeys(us);
 		continueButton.click();
 		password.sendKeys(pwd);
